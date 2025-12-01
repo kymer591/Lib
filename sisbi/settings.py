@@ -103,6 +103,14 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTH_USER_MODEL = "admins.User"
+# Configuración de autenticación y sesiones
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'inicio'
+LOGOUT_REDIRECT_URL = 'login'
+
+# Configuración para que la sesión expire al cerrar el navegador
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_COOKIE_AGE = 86400  # 24 horas como máximo (en segundos)
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/

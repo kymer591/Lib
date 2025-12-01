@@ -20,6 +20,8 @@ from admins import views as admins
 
 urlpatterns = [
     path('', admins.inicio, name='inicio'),
+    path('login/', admins.login_view, name='login'),
+    path('logout/', admins.logout_view, name='logout'),
     path('admin/', admin.site.urls),
     path('admins/', include('admins.urls')),
     path('libros/', include('libros.urls')),
