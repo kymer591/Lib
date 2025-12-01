@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New</title>
+</head>
+<body>
+<h3>Datos de una nueva persona</h3>
+<form method="POST" action="{% url 'nueva_persona' %}" name="fPersona">
+    {% csrf_token %}
+    <label for="nombres">Nombres: </label>
+    <input type="text" name="nombres" required id="nombres" /><br>
+    <label for="apellidos">Apellidos: </label>
+    <input type="text" name="apellidos" required id="apellidos" /><br>
+    <label for="ci">C.I.: </label>
+    <input type="number" name="ci" required id="ci" /><br>
+    <label for="fechaNacimiento">Fecha de Nacimiento: </label>
+    <input type="datetime" name="fechaNacimiento" required id="fechaNacimiento" /><br>
+    <label for="direccion">Dirección: </label>
+    <input type="text" name="direccion" value="" id="direccion"><br>
+    <label for="telefono">Telefono: </label>
+    <input type="number" name="telefono" id="telefono"><br>
+    <label for="username">Nombre de Usuario: </label>
+    <input type="text" name="username" id="username"><br>
+    <label for="email">Correo Electronico: </label>
+    <input type="email" name="email" id="email"><br>
+    <label for="password">Contraseña: </label>
+    <input type="password" name="password" id="password"><br>
+    <button type="submit">Guardar</button>
+    <button type="reset">Borrar</button>
+    <a href="{% url 'admin_index' %}">Volver</a>
+</form>
+</body>
+</html>

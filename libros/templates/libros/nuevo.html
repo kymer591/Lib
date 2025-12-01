@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Book</title>
+</head>
+<body>
+    <h3>Nuevo libro</h3>
+    <form method="POST" action="{% url 'nuevo_libro' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+        <button type="reset">Borrar</button>
+        <button type="button" onclick=window.location.href="{% url 'index_libro' %}">Volver</button>
+    </form>
+</body>
+</html>

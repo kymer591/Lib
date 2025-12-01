@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edición</title>
+</head>
+<body>
+    <h3>{{ persona }}</h3>
+    <form method="POST" action="{% url 'editar_persona' persona.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Actualizar</button>
+        <button type="reset">Borrar</button>
+        <a href="{% url 'admin_index' %}">Volver</a>
+    </form>
+</body>
+</html>

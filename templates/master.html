@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sistema de biblioteca{% endblock %}</title>
+    {% block styles %} {% endblock %}
+    <link rel="stylesheet" href="'css/styles.css'">
+</head>
+<body>
+    <div>
+        <p>Encabezado</p>
+    </div>
+    <div>
+        <div>
+            <nav>
+                <ul> Admisnistración
+                    <li><a href="{% url 'admin_index' %}">Lista de personas</a></li>
+                    <li><a href="#">Libros</a></li>
+                    <li><a href="#">Usuarios</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div>{% block cuerpo %}{% endblock %}</div>
+    </div>        
+    <Footer>Contacto</Footer>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

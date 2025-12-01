@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles</title>
+</head>
+<body>
+    <h3>Datos de {{ persona }}</h3>
+    C.I.: {{ persona.ci }}<br>
+    Correo Electronico: {{ persona.user.email }}<br>
+    Direccion: {{ persona.direccion }}<br>
+    Telefono: {{ persona.telefono }}<br>
+    Fecha de nacimiento: {{ persona.fechaNacimiento }}<br>
+    Usuario: {{ persona.user.username }}<br>
+    <a href="{% url 'admin_index' %}">Volver</a>
+</body>
+</html>

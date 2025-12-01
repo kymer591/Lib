@@ -1,0 +1,30 @@
+{% extends 'master.html' %}
+{% block title %}Persona{% endblock %}
+{% block cuerpo %}
+    <h3>Hola personas</h3>
+    <hr>
+    Usted es {{ nombre }} y tiene {{ edad }} años<br>
+    <table border="1" align="center" width="90%">
+        <tr>
+            <th>Nro</th>
+            <th>Nombres</th>
+            <th>C.I.</th>
+            <th>Email</th>
+            <th>Opciones</th>
+        </tr>
+        {% for p in personas %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ p.apellidos }} {{ p.nombres }}</td>
+            <td>{{ p.ci }}</td>
+            <td>{{ p.user.email }}</td>
+            <td>
+                <a href="{% url 'detalle_persona' p.id %}">Mostrar</a> | 
+                <a href="{% url 'editar_persona' p.id %}">Editar</a> |
+                Eliminar
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="nuevapersona">Nueva persona</a>
+{% endblock %}
